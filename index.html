@@ -35,34 +35,86 @@
   	<p>reverseMessage:{{reverseMessage}}</p>
   </div>-->
   
-  <div id="app-5">
+  <!--<div id="app-5">
   	<p>{{fullName}}</p>
-  </div>
+  </div>-->
+  
+<!--<div id= 'app-6'>
+	<li v-for= "value in Object">
+		{{value}}
+	</li>
+</div>-->
+<!--<div id="app-6">
+	<li v-for="(value,key,index) in Object">
+		{{index}}.{{key}} : {{value}}
+	</li>
+</div>-->
 
-    <script>
-    	//------------分割线----------------
+
+<!--<div id="app-7">
+	<li v-for="n in even(numbers)">{{n}}</li>
+</div>-->
 
 
-		
-    	var vm5 = new Vue({
-    		el : "#app-5",
-    		data:{
-    			firtName: 'Foo',
-    			lastName: 'Bar'
-    		},
-    		computed: {
-    			 fullName : {
-    			 	get : function(){
-    				return this.firtName+ ' '+ this.lastName
-    			},
-    			 	set : function(newValue){
-    			 		var names = newVlaue.split(" ");
-    			 		this.firtName = names[0];
-    			 		this.lastName = names[names.length-1];
-    			 	}
-    		}
-    		}
-    	})
+
+
+    <script>	//------------分割线----------------
+    
+    
+    
+    
+    
+//  		显示过滤/排序结果
+//  var vm7 = new Vue({
+//  	el : "#app-7",
+//  	data : {
+//  		numbers : [1,2,3,4,5]
+//  	},
+//  	methods: {
+//  		even : function (numbers){
+//  			return numbers.filter(function (number){
+//  				return number%2===0
+//  			})
+//  		}
+//  	}
+//  });
+//  
+    
+    
+
+//		对象遍历循环
+//		var vm6 = new Vue({
+//			el : "#app-6",
+//			data : {
+//			   Object:{
+//				firstName: 'John',
+//    			lastName: 'Doe',
+//    			age: 30
+//			   }
+//			}
+//		});
+
+
+ //       计算属性默认get与非默认set
+//  	var vm5 = new Vue({
+//  		el : "#app-5",
+//  		data:{
+//  			firtName: 'Foo',
+//  			lastName: 'Bar'
+//  		},
+//  		computed: {
+//  			 fullName : {
+//  			 	get : function(){
+//  				return this.firtName+ ' '+ this.lastName
+//  			},
+//  			 	set : function(newValue){
+//  			 		var names = newVlaue.split(" ");
+//  			 		this.firtName = names[0];
+//  			 		this.lastName = names[names.length-1];
+//  			 	}
+//  		}
+//  		}
+//  	})
     	
     	
 //  	计算属性------------

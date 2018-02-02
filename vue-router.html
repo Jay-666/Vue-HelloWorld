@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>vue-router入门</title>
+		
+	</head>
+		<script src="https://unpkg.com/vue/dist/vue.js"></script>
+		<script src="https://unpkg.com/vue-router/dist/vue-router.js"></script>
+	<body>
+		<div id= "app">
+			<p>
+				<h1>Hello App</h1>
+				<!--
+                	作者：15107855943@163.com
+                	时间：2018-02-01
+                	描述：<router-link>默认渲染成<a>标签
+                -->
+			<router-link to = "/foo">Go Foo</router-link>
+			<router-link to = "/bar">Go Bar</router-link>
+			</p>
+			
+			<router-view></router-view>
+		</div>
+
+		
+		<script>
+			//1.定义路由组件
+			const Foo = {template : '<div>Foo</div>'};
+			const Bar = {template : '<div>Bar</div>'};
+			//2.定义路由
+			const routes = [
+							{path : '/foo', component:Foo},
+							{path : '/bar', component:Bar}
+							];
+			//3.创建路由实例				
+			const router = new VueRouter({
+				routes
+			});
+//			4.创建和挂载实例
+			const vm = new Vue({
+				router
+			}).$mount('#app')
+
+
+			
+		</script>
+		
+	</body>
+</html>

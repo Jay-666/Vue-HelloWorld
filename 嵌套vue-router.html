@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>嵌套vue-router</title>
+                                   <!--
+                                   	作者：15107855943@163.com
+                                   	时间：2018-02-02
+                                   	描述：	router ==>Vue({router})
+                                   			routes ==>VueRouter({routes})
+                                   			route  ==>{{$router.params.id}}
+                                   			1.子路由配置在父路由的children里
+                                   			                                  -->
+	</head>
+		<script src="js/vue.js"></script>
+		<script src="https://unpkg.com/vue-router/dist/vue-router.js"></script>
+	<body>
+		<div id="app">
+			<router-link to = "/user/foo">user/foo</router-link>
+			<router-link to = "/user/foo/profile">user/profile</router-link>
+			<router-link to = "/user/foo/posts">user/posts</router-link>
+			<router-view></router-view>
+		</div>
+		
+		<script>
+			const User={
+				template: '<div class="user"><h3>User {{$route.params.id}} </h3><router-view></router-view></div>'
+			};
+			const Home = { template : '<div>Home</div>'};
+			const Profile = { template : '<div>Profile</div>'};
+			const Posts = { template : '<div>posts</div>'};
+			
+			const router = new VueRouter({
+				routes:[
+				{
+					path:'/user/:id', component: User,
+					children:[
+					{ path: '' , component: Home},
+					{ path: 'profile' , component: Profile},
+					{ path: 'posts' , component: Posts}
+					]
+					
+				}
+				]
+			});
+			
+			const vm = new Vue({router}).$mount('#app');
+		</script>
+		
+		
+	</body>
+</html>
